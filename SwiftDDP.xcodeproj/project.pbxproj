@@ -120,10 +120,6 @@
 		D0C71B571BC173030089B6CE /* SwiftMeteor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftMeteor.swift; sourceTree = "<group>"; };
 		D0C71B5A1BC174280089B6CE /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		D0D724611C4E7FBA00EE91DC /* DDPUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDPUtilities.swift; sourceTree = "<group>"; };
-		D0E9DFDD1C359535005D92FA /* SwiftDDP OSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftDDP OSX.h"; sourceTree = "<group>"; };
-		D0E9DFDF1C359535005D92FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D0E9DFE91C359535005D92FA /* SwiftDDP_OSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDDP_OSXTests.swift; sourceTree = "<group>"; };
-		D0E9DFEB1C359535005D92FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0F6C99C1BFFA04600A6CB70 /* EJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -191,8 +187,6 @@
 			children = (
 				D02A71DE1BBEFBCA00940C17 /* SwiftDDP */,
 				D02A72541BBF07AF00940C17 /* Tests */,
-				D0E9DFDC1C359535005D92FA /* SwiftDDP OSX */,
-				D0E9DFE81C359535005D92FA /* SwiftDDP OSXTests */,
 				AA0D2AC41D6BEEC700085B33 /* SwiftDDP-tvOS */,
 				AAFDED3D1D6BF984000583AA /* SwiftDDP-OSX */,
 				D02A72341BBF02C200940C17 /* Frameworks */,
@@ -266,24 +260,6 @@
 			);
 			name = Tests;
 			path = SwiftDDPTests;
-			sourceTree = "<group>";
-		};
-		D0E9DFDC1C359535005D92FA /* SwiftDDP OSX */ = {
-			isa = PBXGroup;
-			children = (
-				D0E9DFDD1C359535005D92FA /* SwiftDDP OSX.h */,
-				D0E9DFDF1C359535005D92FA /* Info.plist */,
-			);
-			path = "SwiftDDP OSX";
-			sourceTree = "<group>";
-		};
-		D0E9DFE81C359535005D92FA /* SwiftDDP OSXTests */ = {
-			isa = PBXGroup;
-			children = (
-				D0E9DFE91C359535005D92FA /* SwiftDDP_OSXTests.swift */,
-				D0E9DFEB1C359535005D92FA /* Info.plist */,
-			);
-			path = "SwiftDDP OSXTests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
