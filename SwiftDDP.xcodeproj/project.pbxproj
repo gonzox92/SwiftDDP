@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6FFFCBC71C64352300C147F2 /* DDPExponentialBackoff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFFCBC61C64352300C147F2 /* DDPExponentialBackoff.swift */; };
-		AA0D2AC61D6BEEC700085B33 /* SwiftDDP-tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = AA0D2AC51D6BEEC700085B33 /* SwiftDDP-tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA0D2ACB1D6BF0F500085B33 /* DDPExponentialBackoff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFFCBC61C64352300C147F2 /* DDPExponentialBackoff.swift */; };
 		AA0D2ACC1D6BF0F500085B33 /* DDPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02A720B1BBEFCD200940C17 /* DDPClient.swift */; };
 		AA0D2ACD1D6BF0F500085B33 /* DDPEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02A720E1BBEFCD300940C17 /* DDPEvents.swift */; };
@@ -80,8 +79,6 @@
 /* Begin PBXFileReference section */
 		6FFFCBC61C64352300C147F2 /* DDPExponentialBackoff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDPExponentialBackoff.swift; sourceTree = "<group>"; };
 		AA0D2AC31D6BEEC700085B33 /* SwiftDDP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftDDP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA0D2AC51D6BEEC700085B33 /* SwiftDDP-tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftDDP-tvOS.h"; sourceTree = "<group>"; };
-		AA0D2AC71D6BEEC700085B33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA0D2ADB1D6BF18700085B33 /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/tvOS/XCGLogger.framework; sourceTree = "<group>"; };
 		AA0D2ADC1D6BF18700085B33 /* SwiftWebSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftWebSocket.framework; path = Carthage/Build/tvOS/SwiftWebSocket.framework; sourceTree = "<group>"; };
 		AA0D2ADD1D6BF18700085B33 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/tvOS/Quick.framework; sourceTree = "<group>"; };
@@ -164,15 +161,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AA0D2AC41D6BEEC700085B33 /* SwiftDDP-tvOS */ = {
-			isa = PBXGroup;
-			children = (
-				AA0D2AC51D6BEEC700085B33 /* SwiftDDP-tvOS.h */,
-				AA0D2AC71D6BEEC700085B33 /* Info.plist */,
-			);
-			path = "SwiftDDP-tvOS";
-			sourceTree = "<group>";
-		};
 		AAFDED3D1D6BF984000583AA /* SwiftDDP-OSX */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,7 +175,6 @@
 			children = (
 				D02A71DE1BBEFBCA00940C17 /* SwiftDDP */,
 				D02A72541BBF07AF00940C17 /* Tests */,
-				AA0D2AC41D6BEEC700085B33 /* SwiftDDP-tvOS */,
 				AAFDED3D1D6BF984000583AA /* SwiftDDP-OSX */,
 				D02A72341BBF02C200940C17 /* Frameworks */,
 				D02A72AE1BBF383700940C17 /* SwiftDDP.podspec */,
@@ -269,7 +256,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA0D2AC61D6BEEC700085B33 /* SwiftDDP-tvOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
