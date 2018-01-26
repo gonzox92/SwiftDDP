@@ -51,7 +51,7 @@ open class Meteor {
         
     open static let client = Meteor.Client()          // Client is a singleton object
     
-    internal static var collections = [String:MeteorCollectionType]()
+    public static var collections = [String:MeteorCollectionType]()
     
     /**
     returns a Meteor collection, if it exists
