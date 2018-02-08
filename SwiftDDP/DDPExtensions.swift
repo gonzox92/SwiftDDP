@@ -334,15 +334,19 @@ extension DDPClient {
     */
     
     @discardableResult public func loginWithToken(_ callback: DDPMethodCallback?) -> Bool {
+      print("loginWithToken ....")
         if let token = userData.string(forKey: DDP_TOKEN),
             let tokenDate = userData.object(forKey: DDP_TOKEN_EXPIRES) as? Date {
                 print("Found token & token expires \(token), \(tokenDate)")
                 if (tokenDate.compare(Date()) == ComparisonResult.orderedDescending) {
                     let params = ["resume":token] as NSDictionary
                     login(params, callback:callback)
+                    print("loginWithToken = TRUE")
                     return true
                 }
         }
+      
+        print("loginWithToken = FALSE")
         return false
     }
     
@@ -484,8 +488,10 @@ extension DDPClient {
     */
     
     public func resume(_ url:String, callback:DDPCallback?) {
+        log.info("RESUMING...")
         connect(url) { session in
             if let _ = self.user() {
+              log.info("USER FOUND")
                 if !self.loginWithToken() { result, error in
                     if error == nil {
                         log.debug("Resumed previous session at launch")
@@ -495,11 +501,13 @@ extension DDPClient {
                         log.error("\(error)")
                         callback?()
                     }
-                    }{
-                    self.logout()
-                    callback?()
+                } {
+                  log.info("RESUMING LOGOUT...")
+                  self.logout()
+                  callback?()
                 }
             } else {
+                log.info("RESUMING COMPLETING...")
                 if let completion = callback { completion() }
             }
         }
