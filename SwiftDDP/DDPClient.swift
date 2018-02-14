@@ -53,7 +53,7 @@ public protocol SwiftDDPDelegate {
 open class DDPClient: NSObject {
   
   // included for storing login id and token
-  internal let userData = UserDefaults.standard
+  public let userData = UserDefaults.standard
   
   let background: OperationQueue = {
     let queue = OperationQueue()
@@ -600,5 +600,9 @@ open class DDPClient: NSObject {
   
   open func didReceiveErrorMessage(_ message: DDPError) {
     if let error = events.onError { error(message) }
+  }
+  
+  open func closeConnection() {
+    self.socket.close()
   }
 }

@@ -262,6 +262,7 @@ extension DDPClient {
                         self.userData.set(email, forKey: DDP_EMAIL)
                     }
                     if let username = user["username"] {
+                      log.info("Setting USERNAME: \(username)")
                         self.userData.set(username, forKey: DDP_USERNAME)
                     }
                 }
@@ -334,19 +335,15 @@ extension DDPClient {
     */
     
     @discardableResult public func loginWithToken(_ callback: DDPMethodCallback?) -> Bool {
-      print("loginWithToken ....")
         if let token = userData.string(forKey: DDP_TOKEN),
             let tokenDate = userData.object(forKey: DDP_TOKEN_EXPIRES) as? Date {
-                print("Found token & token expires \(token), \(tokenDate)")
                 if (tokenDate.compare(Date()) == ComparisonResult.orderedDescending) {
                     let params = ["resume":token] as NSDictionary
                     login(params, callback:callback)
-                    print("loginWithToken = TRUE")
                     return true
                 }
         }
       
-        print("loginWithToken = FALSE")
         return false
     }
     
@@ -488,26 +485,25 @@ extension DDPClient {
     */
     
     public func resume(_ url:String, callback:DDPCallback?) {
-        log.info("RESUMING...")
+      print("RESUMING Connection...")
         connect(url) { session in
             if let _ = self.user() {
-              log.info("USER FOUND")
+                print("USER FOUND...")
                 if !self.loginWithToken() { result, error in
                     if error == nil {
-                        log.debug("Resumed previous session at launch")
                         if let completion = callback { completion() }
                     } else {
+                        print("ERROR Trying to resume")
                         self.logout()
                         log.error("\(error)")
                         callback?()
                     }
                 } {
-                  log.info("RESUMING LOGOUT...")
+                  log.info("CANNOT RESUME, Performing LOGOUT...")
                   self.logout()
-                  callback?()
                 }
             } else {
-                log.info("RESUMING COMPLETING...")
+                print("USER NOT FOUND, calling completion...")
                 if let completion = callback { completion() }
             }
         }
